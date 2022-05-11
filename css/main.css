@@ -1,0 +1,328 @@
+/* global styles */
+body {
+  background-color: #373542;
+  margin: 0;
+
+  font-family: "Roboto", sans-serif;
+  background-image: url("../images/bg-pattran.png");
+}
+
+button {
+  background-color: #1c1c1c; /* Green */
+  border: 1px solid #ffcc33;
+  color: #ffcc33;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.1em;
+}
+
+.yellow-wrapper {
+  color: #ffcc33;
+}
+
+.white-wrapper {
+  color: #ffffff;
+}
+
+.hide-overflow {
+  overflow: hidden;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+/* end of global styles */
+
+/* 
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+
+/* header styles  */
+header {
+  margin-top: 3rem;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.desktop-nav {
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+
+.mobile-nav {
+  display: none;
+  width: 100%;
+}
+
+/* styles for mobile menu navbar */
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+li {
+  padding: 5px;
+}
+
+label {
+  background-color: inherit;
+  cursor: pointer;
+}
+
+label,
+#content {
+  width: 15vw;
+  height: auto;
+  display: inline-block;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+#menu {
+  background-color: rgba(8, 2, 31, 0.8);
+  width: 100vw;
+  overflow: hidden;
+  max-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+  -webkit-transition: all 0.3s ease;
+}
+
+/* wtf */
+#menu-toggle:checked + #menu {
+  top: 0;
+  left: 0;
+  float: none;
+  height: 100vh;
+  max-height: 100vh;
+  position: absolute;
+  z-index: 9999999;
+}
+
+
+#menu span{
+  color: #ffcc33;
+  font-weight: 600;
+  margin: auto 0;
+}
+
+
+/* end of mobile menu styles */
+
+.desktop-nav .branch-offices-left-container {
+  width: 50%;
+  max-width: 50%;
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid #ffffff;
+  color: #ffffff;
+  font-weight: 550;
+}
+
+.desktop-nav .branch-offices-right-container {
+  width: 50%;
+  max-width: 50%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  border-top: 1px solid #ffffff;
+  color: #ffffff;
+  font-weight: 550;
+}
+
+header span:hover {
+  color: #ffcc33;
+  border-top: 1px solid #ffffff;
+  cursor: pointer;
+}
+
+.desktop-nav .branch-office-container {
+  height: fit-content;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.logo {
+  height: 15vh;
+  width: auto;
+  margin-right: 2rem;
+}
+
+/* header media queries */
+@media screen and (max-width: 600px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: block;
+  }
+}
+
+/* end of header media queries */
+/* end of header styles */
+
+/* 
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+
+/* main section */
+main {
+  max-width: 100%;
+  width: 100%;
+}
+
+main .home {
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.player-img {
+  width: 20vh;
+  height: auto;
+  margin-left: -3.5rem;
+}
+
+main .home > h1 {
+  margin-top: -1rem;
+  font-size: 7vw;
+  color: #ffcc33;
+}
+
+.informative-card-img {
+  width: 30vw;
+  height: auto;
+}
+
+main .informative-card {
+  max-width: 100%;
+  height: auto;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+main .informative-card .card-content {
+  max-width: 30rem;
+  margin-left: 1rem;
+}
+
+/* main media queries */
+@media screen and (max-width: 600px) {
+  main .informative-card {
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-content {
+    max-width: 80vw;
+    margin-left: 1rem;
+  }
+
+  .informative-card-img {
+    width: 60vw;
+    height: auto;
+  }
+}
+/* end of main media queries */
+/* end of main section */
+
+/* 
+
+
+
+
+
+
+
+
+
+
+*/
+/* styles footer */
+footer {
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-content-wrapper {
+  width: 60%;
+  max-width: 60%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.footer-content-wrapper .row {
+  display: flex;
+  width: auto;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.contact-container {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.branch-office-information-container {
+  margin-left: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .footer-content-wrapper .row {
+    flex-direction: column;
+  }
+}
+
+/* end of header styles */
