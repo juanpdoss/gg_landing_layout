@@ -2,7 +2,7 @@
 body {
   background-color: #373542;
   margin: 0;
-
+  overflow: auto;
   font-family: "Roboto", sans-serif;
   background-image: url("../images/bg-pattran.png");
 }
@@ -99,36 +99,67 @@ label,
 
 #menu {
   background-color: rgba(8, 2, 31, 0.8);
-  width: 100vw;
   overflow: hidden;
-  max-height: 0;
+  width: 100vw;
+  height: 100%;
+  max-height: 100%;
+  top: 0;
+  left: 0;
+  float: none;
+  position: absolute;
+  z-index: 9999999;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-
 
   -webkit-transition: all 0.3s ease;
 }
 
-/* wtf */
-#menu-toggle:checked + #menu {
-  top: 0;
-  left: 0;
-  float: none;
-  height: 100vh;
-  max-height: 100vh;
-  position: absolute;
-  z-index: 9999999;
+#mobile-menu-open-button{
+  margin-left: 15px;
+  font-size: 30px;
+  color: #ffcc33;
 }
 
+.mobile-menu-content {
+  margin-top: 15vh;
+  width: 85%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
 
-#menu span{
+#mobile-menu-close-button {
+  align-self: flex-end;
+  color: #ffcc33;
+  font-size: 18px;
+  margin-top: -20px;
+  cursor: pointer;
+}
+
+#mobile-menu-title {
+  align-self: flex-start;
+}
+
+#mobile-menu-items {
+  list-style: none;
+  align-self: flex-start;
+  margin-left: -20px;
+}
+
+#mobile-menu-hr {
+  width: 100%;
+}
+
+#menu span {
   color: #ffcc33;
   font-weight: 600;
-  margin: auto 0;
 }
-
 
 /* end of mobile menu styles */
 
@@ -179,7 +210,8 @@ header span:hover {
   }
 
   .mobile-nav {
-    display: block;
+    display: flex;
+    justify-content: flex-end;
   }
 }
 
@@ -259,15 +291,16 @@ main .informative-card .card-content {
     flex-direction: column;
   }
 
-  .card-content {
-    max-width: 80vw;
-    margin-left: 1rem;
-  }
-
-  .informative-card-img {
-    width: 60vw;
+  main .informative-card-img{
+    width: 100%;
     height: auto;
   }
+
+  main .informative-card .card-content{
+    margin-left: 0;
+  }
+
+ 
 }
 /* end of main media queries */
 /* end of main section */

@@ -17,34 +17,32 @@
         The initial-scale=1.0 part sets the initial zoom level when the page is first loaded by the browser.
       -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 </head>
 
 <body>
     <header>
-
         <!-- start of mobile nav -->
         <div class="mobile-nav">
             <label for="menu-toggle">
-                <i class="fa fa-plus-square"></i>
+                <i class="fa fa-plus-square" id="mobile-menu-open-button"></i>
             </label>
-            <input type="checkbox" id="menu-toggle" />
 
+            <input type="checkbox" id="menu-toggle" onclick="openMenu()" />
             <div id="menu">
-                <span>SUCURSALES</span>
-                <hr>
-                <ul>
-                    <li><a href="#">Jose Maria Paz</a></li>
-                    <li><a href="#">Libertad</a></li>
-                    <li><a href="#">Merlo</a></li>
-                    <li><a href="#">Villa Tesei</a></li>
-                    <li><a href="#">Ituzaingo</a></li>
-                </ul>
+                <div class="mobile-menu-content">
+                    <span id="mobile-menu-title">SUCURSALES</span>
+                    <i id="mobile-menu-close-button" class="fa fa-close" onclick="closeMobileMenu()"></i>
+                    <hr id="mobile-menu-hr">
+                    <ul id="mobile-menu-items">
+                        <li><a href="#">Jose Maria Paz</a></li>
+                        <li><a href="#">Libertad</a></li>
+                        <li><a href="#">Merlo</a></li>
+                        <li><a href="#">Villa Tesei</a></li>
+                        <li><a href="#">Ituzaingo</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-
-
-
 
         <!-- start of desktop-nav -->
         <div class="desktop-nav">
@@ -207,5 +205,19 @@
         </div>
     </footer>
 </body>
+
+<script>
+    const closeMobileMenu = () => {
+        document.getElementById("menu").style.height = "0";
+        document.getElementsByTagName("body")[0].style.overflow = "auto";
+    }
+
+    const openMenu = () => {
+        document.getElementById("menu").style.height = "100vh";
+        document.getElementsByTagName("body")[0].style.overflow = "hidden";
+    }
+
+
+</script>
 
 </html>
