@@ -8,7 +8,7 @@ body {
 }
 
 button {
-  background-color: #1c1c1c; /* Green */
+  background-color: #373542;
   border: 1px solid #ffcc33;
   color: #ffcc33;
   padding: 15px 32px;
@@ -16,6 +16,8 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 1.1em;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 .yellow-wrapper {
@@ -70,7 +72,20 @@ header {
   width: 100%;
 }
 
-/* styles for mobile menu navbar */
+#mobile-logo {
+  align-self: center;
+  width: 20vw;
+  height: auto;
+}
+
+/* styles for mobile menu navbar and header */
+
+.mobile-header-content {
+  width: inherit;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
 
 a {
   color: #fff;
@@ -90,18 +105,20 @@ label,
 #content {
   width: 15vw;
   height: auto;
-  display: inline-block;
+  align-self: flex-end;
+  margin-top: -55px;
 }
 
 #menu-toggle {
   display: none;
+  margin-top: -15px;
 }
 
 #menu {
   background-color: rgba(8, 2, 31, 0.8);
   overflow: hidden;
   width: 100vw;
-  height: 100%;
+  height: 0;
   max-height: 100%;
   top: 0;
   left: 0;
@@ -117,7 +134,7 @@ label,
   -webkit-transition: all 0.3s ease;
 }
 
-#mobile-menu-open-button{
+#mobile-menu-open-button {
   margin-left: 15px;
   font-size: 30px;
   color: #ffcc33;
@@ -205,13 +222,16 @@ header span:hover {
 
 /* header media queries */
 @media screen and (max-width: 600px) {
+  header {
+    margin-top: 1rem;
+  }
+
   .desktop-nav {
     display: none;
   }
 
   .mobile-nav {
-    display: flex;
-    justify-content: flex-end;
+    display: block;
   }
 }
 
@@ -229,36 +249,53 @@ header span:hover {
 
 
 
-
-
 */
 
 /* main section */
 main {
   max-width: 100%;
   width: 100%;
+  height: auto;
 }
 
 main .home {
-  max-width: 100%;
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-content {
+  width: fit-content;
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1rem;
-  margin-top: 2rem;
 }
 
 .player-img {
-  width: 20vh;
+  width: 28vh;
   height: auto;
   margin-left: -3.5rem;
+
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 }
 
-main .home > h1 {
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0px); }   
+}
+
+.home-title {
   margin-top: -1rem;
-  font-size: 7vw;
+  margin-bottom: 1rem;
+  font-size: 5vw;
   color: #ffcc33;
 }
 
@@ -284,6 +321,18 @@ main .informative-card .card-content {
 
 /* main media queries */
 @media screen and (max-width: 600px) {
+  main .home {
+    min-height: 100vh;
+    width: 100 vw;
+    justify-content: center;
+  }
+
+  .home-title {
+    margin-top: -1rem;
+    font-size: 10vw;
+    color: #ffcc33;
+  }
+
   main .informative-card {
     max-width: 100%;
     height: auto;
@@ -291,16 +340,14 @@ main .informative-card .card-content {
     flex-direction: column;
   }
 
-  main .informative-card-img{
+  main .informative-card-img {
     width: 100%;
     height: auto;
   }
 
-  main .informative-card .card-content{
+  main .informative-card .card-content {
     margin-left: 0;
   }
-
- 
 }
 /* end of main media queries */
 /* end of main section */
